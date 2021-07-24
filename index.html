@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/612f542d54.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allan&family=Anton&family=Bebas+Neue&family=Courgette&family=Imbue&family=Kaushan+Script&family=Lobster&family=Nova+Square&family=Oswald:wght@300;400&family=PT+Sans+Narrow&family=Pathway+Gothic+One&family=Poppins&family=Potta+One&family=Righteous&family=Roboto:wght@300;400&family=Squada+One&family=Teko:wght@300;400&family=Trade+Winds&family=Yanone+Kaffeesatz:wght@400;500&family=Yellowtail&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/prism.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>PostMaster</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">
+            PostMaster
+        </div>
+        <div class="nav-urls">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Devloper Console</a>
+        </div>
+        <div class="nav-text">
+            Easily Post and Get with PostMaster 2.0.1
+        </div>
+    </nav>
+    <div class="container">
+        <div class="contents">
+            <h1>PostMaster</h1>
+            <h5>Welcome to PostMaster 2.0.1</h5>
+        </div>
+        <div class="functionality">
+            <div class="form-data url">
+                <label for="url">URL</label>
+                <input type="text" name="url-field" id="url-field" class="url-field" placeholder="Enter URL">
+            </div>
+            <div class="requesttypes methods">
+                <label for="radiobtn">Request Type</label>
+                <div class="btns">
+                    <p>GET <input type="radio" name="requestType" id="get" value="GET" checked="checked"></p>
+                    <p>POST <input type="radio" name="requestType" id="get" value="POST"></p>
+                </div>
+            </div>
+            <div class="requesttypes parameter">
+                <label for="radiobtn">Content Types</label>
+                <div class="btns">
+                    <p>JSON <input type="radio" name="params" id="json" value="json" checked="checked" onclick="toggle_params(this)"></p>
+                    <p>Custome Parameters <input type="radio" name="params" id="custome" value="custome" onclick="toggle_params(this)"></p>
+                </div>
+            </div>
+            <!-- Hidden for content type json -->
+            <div class="parameters_box params_box">
+                <div>
+                    <label for="param-1">Parameter 1</label>
+                    <input type="text" class="forkey" placeholder="Key">
+                    <input type="text" class="forvalue" placeholder="Value">
+                    <button onclick="update_params(this, 'add')">&plus;</button>
+                </div>
+            </div>
+            <!-- hidden for content type params -->
+            <div class="paramjson json_box params_box">
+                <label for="json-box">Request JSON</label>
+                <textarea cols="30" rows="4" placeholder="Request JSON" class="request_json"></textarea>
+            </div>
+            <div class="btn-div">
+                <button class="btn btn-primary" onclick="timeToPost()">Submit</button>
+            </div>
+            <div class="responses_here">
+                <label for="response">Response</label>
+                <!-- <textarea class="forresponse" cols="30" rows="4" placeholder="Your Response will be Shown here"></textarea> -->
+                <pre id='responsePre' class="language-javascript">
+                    <code id='responsePrism' class="language-javascript forresponse" >
+                        // Your Response Will Appear Here
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="./assets/js/prism.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
